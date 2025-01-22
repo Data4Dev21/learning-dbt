@@ -1,0 +1,69 @@
+version: 2
+
+models:
+  - name: preppin
+    columns:
+      - name: online_or_in_person
+        data_tests:
+         - not_null
+      - name: quarter
+        data_tests:
+         - not_null
+      - name: value
+        data_tests:
+          - not_null        
+      - name: quarterly_targets
+        data_tests:
+          - not_null 
+      - name: variance
+        data_tests:
+          - not_null 
+
+
+models:
+  - name: final_output
+    columns:
+      - name: online_or_in_person
+        data_tests:
+         - not_null
+      - name: quarter
+        data_tests:
+         - not_null
+      - name: value
+        data_tests:
+          - not_null        
+      - name: quarterly_targets
+        data_tests:
+          - not_null 
+      - name: variance
+        data_tests:
+          - not_null 
+
+
+models:
+  - name: quarterly_dsb_transactions
+    columns:
+      - name: online_or_in_person
+        data_tests:
+         - not_null
+      - name: quarter
+        data_tests:
+         - not_null
+      - name: value
+        data_tests:
+          - not_null 
+
+
+models:
+  - name: quarterly_targets
+    columns:
+      - name: online_or_in_person
+        data_tests:
+         - not_null
+      - name: quarter
+        data_tests:
+         - not_null
+      - name: quarterly_targets
+        data_tests:
+          - not_null       
+           
