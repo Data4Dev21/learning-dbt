@@ -20,4 +20,4 @@ SELECT
         "Online or In-Person" as online_or_in_person,
         '4' AS quarter,
         q4 AS quarterly_targets
-    FROM targets
+    FROM  {{ source('main','targets') }}

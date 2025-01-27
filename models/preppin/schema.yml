@@ -18,10 +18,8 @@ models:
       - name: variance
         data_tests:
           - not_null 
-
-
-models:
   - name: final_output
+    description: final model for variance calculation through the join of 2 staging models.
     columns:
       - name: online_or_in_person
         data_tests:
@@ -38,10 +36,8 @@ models:
       - name: variance
         data_tests:
           - not_null 
-
-
-models:
   - name: quarterly_dsb_transactions
+    description: staging model gotten from our raw transactions table filterd to DSB.
     columns:
       - name: online_or_in_person
         data_tests:
@@ -52,10 +48,8 @@ models:
       - name: value
         data_tests:
           - not_null 
-
-
-models:
   - name: quarterly_targets
+    description: staging model gotten from our raw targets table.
     columns:
       - name: online_or_in_person
         data_tests:

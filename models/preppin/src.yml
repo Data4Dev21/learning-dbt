@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: main
+    database: demo
+    tables:
+      - name: transactions
+        description: raw transactions data
+        loaded_at_field: STRPTIME("Transaction Date", '%d/%m/%Y %H:%M:%S')
+        freshness: # default freshness
+          warn_after: {count: 1500, period: day}
+          error_after: {count: 2000, period: day}
+      - name: targets
+        description: raw targets data

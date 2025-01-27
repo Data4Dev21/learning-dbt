@@ -5,6 +5,6 @@
         END AS online_or_in_person,
         quarter(STRPTIME(tr."Transaction Date", '%d/%m/%Y %H:%M:%S')) AS quarter,
         SUM(tr.value) AS value
-    FROM transactions tr
+    FROM {{ source('main','transactions') }} tr
     WHERE "Transaction Code" LIKE '%DSB_%'
     GROUP BY 1, 2
