@@ -6,7 +6,7 @@ WITH cte AS (
         END AS online_or_in_person,
         quarter(STRPTIME(tr."Transaction Date", '%d/%m/%Y %H:%M:%S')) AS quarter,
         SUM(tr.value) AS value
-    FROM transactions tr
+    FROM {{ source('main','transactions') }} tr
     WHERE "Transaction Code" LIKE '%DSB_%'
     GROUP BY 1, 2
 ),
@@ -33,7 +33,7 @@ unpivoted_targets AS (
         "Online or In-Person",
         '4' AS quarter,
         q4 AS quarterly_targets
-    FROM targets
+    FROM {{ source('main','targets') }}
 )
 SELECT 
     tr.online_or_in_person,

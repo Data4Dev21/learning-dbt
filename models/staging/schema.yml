@@ -18,7 +18,7 @@ models:
       - name: variance
         data_tests:
           - not_null 
-  - name: final_output
+  - name: fct_transaction_targets
     description: final model for variance calculation through the join of 2 staging models.
     columns:
       - name: online_or_in_person
