@@ -31,5 +31,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   worried:
-    preppin:
+    legacy:
+      materialized: table
+    transactions:
+      materialized: table
+    targets:
       materialized: table
